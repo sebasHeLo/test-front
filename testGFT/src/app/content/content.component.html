@@ -1,0 +1,44 @@
+<div class="card" id="content">
+  <div class="card-body">
+    <form method="post">
+      <h3>Account types</h3>
+      <div class="form-group">
+        <select class="custom-select form-control">
+          <option *ngFor="let info of data.response.type_cards" value="{{ info.type }}">
+            {{ info.name }}
+          </option>
+        </select>
+      </div>
+
+      <button id="applyBtn" type="submit" class="btn btn-success">
+        Apply for
+      </button>
+    </form>
+  </div>
+</div>
+
+<div class="card" id="contentB">
+  <h2>My Accounts</h2>
+  <div class="card-body">
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Deposits</th>
+          <th>Withdrawals</th>
+          <th>Balance</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let dat of accounts.response">
+          <th>{{ dat.name }}</th>
+          <td>{{ dat.type }}</td>
+          <td>{{ dat.deposits }}</td>
+          <td>{{ dat.withdrawals }}</td>
+          <td>{{ dat.balance }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

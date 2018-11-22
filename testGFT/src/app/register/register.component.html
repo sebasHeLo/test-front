@@ -1,0 +1,23 @@
+<div class="card" id="content">
+  <div class="card-body">
+    <form method="post" #regFrm="ngForm" (ngSubmit)="registerUser(regForm)">
+      <h3>Sign up</h3>
+      <div class="form-group">
+        <input type="email" class="form-control" name="email" placeholder="Email" [(ngModel)]="usr.email" required>
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" name="firstname" placeholder="First name" [(ngModel)]="usr.firstname" required>
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" name="lastname" placeholder="Last name" [(ngModel)]="usr.lastname" required>
+      </div>
+      <div class="form-group">
+        <input type="password" class="form-control" name="password" placeholder="Password" [(ngModel)]="usr.password" required>
+      </div>
+      <button id="signBtn" type="submit" class="btn btn-primary" [disabled]="regFrm.invalid">
+        Submit
+      </button>
+      <label>Wait!,</label>&nbsp;<a href="#" routerLink="/login">I want to go back</a>
+    </form>
+  </div>
+</div>
